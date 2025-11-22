@@ -8,4 +8,3 @@ const getLength = (value: string | object) => {
     }
 }
 
-
