@@ -93,6 +93,18 @@ function getUniqueValues(value1:number[],value2:number[]):number[]{
 
 //* Problem 8 -----------
 
+type Data = {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number; 
+};
+
+function calculateTotalPrice(data:Data){
+    let Totalprice = data.price * data.quantity;
+    let const = Totalprice
+
+}
 
 
 
