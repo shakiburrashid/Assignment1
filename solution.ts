@@ -1,4 +1,3 @@
-//* Problem 1 -----------
 
 const formatValue = (value: string | number | boolean) => {
     if (typeof value === 'string') {
@@ -13,7 +12,6 @@ const formatValue = (value: string | number | boolean) => {
 }
 
 
-//* Problem 2 -----------
 
 const getLength = (value: string | object) => {
 
@@ -27,7 +25,6 @@ const getLength = (value: string | object) => {
 
 
 
-//* Problem 3 -----------
 class Person {
     name: string;
     age: number;
@@ -43,7 +40,6 @@ class Person {
 }
 
 
-//* Problem 4 -----------
 
 type value = {
     title: string;
@@ -54,7 +50,6 @@ function filterByRating(Value: value[]): value[] {
     return Value.filter(data => data.rating >= 4);
 }
 
-//* Problem 5 -----------
 
 type UserData = {
     id: number,
@@ -69,7 +64,6 @@ function filterActiveUsers(value: UserData[]): UserData[] {
 }
 
 
-//* Problem 6 -----------
 
 interface Book {
     title: string,
@@ -82,7 +76,6 @@ function printBookDetails(value: Book) {
     return console.log(`Title: ${value.title}, Author: ${value.author}, Published: ${value.publishedYear}, Available: ${(value.isAvailable ? `Yes` : `No`)}`)
 }
 
-//* Problem 7 -----------
 
 function getUniqueValues(value1: number[], value2: number[]): number[] {
     return Array.from(new Set([...value1, ...value2]));
@@ -91,7 +84,6 @@ function getUniqueValues(value1: number[], value2: number[]): number[] {
 
 
 
-//* Problem 8 -----------
 
 
 
