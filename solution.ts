@@ -93,64 +93,21 @@ function getUniqueValues(value1: number[], value2: number[]): number[] {
 
 //* Problem 8 -----------
 
-/* type Data = {
-    name: string;
-    price: number;
-    quantity: number;
-    discount?: number;
-};
-
-function calculateTotalPrice(data: Data[]): number {
-    return data.reduce((total, prd) => {
-        const discount = (prd.discount) ? (prd.price / 100) : 0;
-        const PriceDiscount = prd.price - prd.price * discount;
-        const TotalPrice = PriceDiscount * prd.quantity;
-
-        return total + TotalPrice;
-    }, 0);
-}
 
 
-const products = [
-  { name: 'Pen', price: 10, quantity: 2 },
-  { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
-  { name: 'Bag', price: 50, quantity: 1, discount: 20 },
-];
-
-// console.log(calculateTotalPrice(products));
-console.log(calculateTotalPrice(products));
-
-
-
-
-
-*/
-
-
-
-
-type Product = {
+type Data = {
   name: string;
   price: number;
   quantity: number;
   discount?: number;
 };
 
-function calculateTotalPrice(products: Product[]): number {
-  return products.reduce((total, product) => {
-    const discount = product.discount ? product.discount / 100 : 0;
-    const finalPrice = product.price - product.price * discount;
-    const productTotal = finalPrice * product.quantity;
+function calculateTotalPrice(data: Data[]): number {
+  return data.reduce((total, Prd) => {
+    const discount = Prd.discount ? Prd.discount / 100 : 0;
+    const finalPrice = Prd.price - Prd.price * discount;
+    const PrdTotal = finalPrice * Prd.quantity;
 
-    return total + productTotal;
+    return total + PrdTotal;
   }, 0);
 }
-
-const products = [
-  { name: "Pen", price: 10, quantity: 2 },
-  { name: "Notebook", price: 25, quantity: 3, discount: 10 },
-  { name: "Bag", price: 50, quantity: 1, discount: 20 },
-];
-
-console.log(calculateTotalPrice(products));
-// Output: 127.5
