@@ -42,7 +42,7 @@ class Person {
     }
 }
 
- 
+
 //* Problem 4 -----------
 
 type value = {
@@ -78,13 +78,13 @@ interface Book {
     isAvailable: boolean
 }
 
-function printBookDetails(value:Book){
-    return console.log(`Title: ${value.title}, Author: ${value.author}, Published: ${value.publishedYear}, Available: ${(value.isAvailable?`Yes`:`No`)}`)
-} 
+function printBookDetails(value: Book) {
+    return console.log(`Title: ${value.title}, Author: ${value.author}, Published: ${value.publishedYear}, Available: ${(value.isAvailable ? `Yes` : `No`)}`)
+}
 
 //* Problem 7 -----------
 
-function getUniqueValues(value1:number[],value2:number[]):number[]{
+function getUniqueValues(value1: number[], value2: number[]): number[] {
     return Array.from(new Set([...value1, ...value2]));
 
 }
@@ -93,18 +93,64 @@ function getUniqueValues(value1:number[],value2:number[]):number[]{
 
 //* Problem 8 -----------
 
-type Data = {
-  name: string;
-  price: number;
-  quantity: number;
-  discount?: number; 
+/* type Data = {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number;
 };
 
-function calculateTotalPrice(data:Data){
-    let Totalprice = data.price * data.quantity;
-    let const = Totalprice
+function calculateTotalPrice(data: Data[]): number {
+    return data.reduce((total, prd) => {
+        const discount = (prd.discount) ? (prd.price / 100) : 0;
+        const PriceDiscount = prd.price - prd.price * discount;
+        const TotalPrice = PriceDiscount * prd.quantity;
 
+        return total + TotalPrice;
+    }, 0);
 }
 
 
+const products = [
+  { name: 'Pen', price: 10, quantity: 2 },
+  { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
+  { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+];
 
+// console.log(calculateTotalPrice(products));
+console.log(calculateTotalPrice(products));
+
+
+
+
+
+*/
+
+
+
+
+type Product = {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+};
+
+function calculateTotalPrice(products: Product[]): number {
+  return products.reduce((total, product) => {
+    const discount = product.discount ? product.discount / 100 : 0;
+    const finalPrice = product.price - product.price * discount;
+    const productTotal = finalPrice * product.quantity;
+
+    return total + productTotal;
+  }, 0);
+}
+
+const products = [
+  { name: "Pen", price: 10, quantity: 2 },
+  { name: "Notebook", price: 25, quantity: 3, discount: 10 },
+  { name: "Bag", price: 50, quantity: 1, discount: 20 },
+];
+
+console.log(calculateTotalPrice(products));
+// Output: 127.5
